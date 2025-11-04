@@ -16,6 +16,7 @@ echo "You may need to install 'python-devel' packages."
 check=$(python --version)
 if [ -z "$check" ]; then 
     echo "installing python3 packages"
+    #use uname -v | awk '${print 1}' or something clearer to derrive the os (in a rush will fix later)
     sudo apt-get update && sudo apt-get upgrade -y --show-progress && sudo apt-get dist-upgrade -y && sudo apt install python3 python3-pip python3-dev python3-venv build-essential || sudo dnf5 update && sudo dnf5 install python3 python3-pip python3-dev python3-venv build-essential
     #todo: check python path is correct to py3
     if which python3 && echo $PYTHONPATH >/dev/null 2>&1
